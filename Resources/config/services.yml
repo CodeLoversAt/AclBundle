@@ -1,9 +1,16 @@
 parameters:
     code_lovers_acl.handler.mongodb.class: CodeLovers\AclBundle\Handler\MongoDbAclHandler
+    code_lovers_acl.handler.orm.class: CodeLovers\AclBundle\Handler\ORMAclHandler
 
 services:
     code_lovers_acl.handler.mongodb:
         class: %code_lovers_acl.handler.mongodb.class%
+        arguments: [@security.acl.provider, @security.context, @monolog.logger.acl]
+        tags:
+            - { name: monolog.logger, channel: acl }
+
+    code_lovers_acl.handler.orm:
+        class: %code_lovers_acl.handler.orm.class%
         arguments: [@security.acl.provider, @security.context, @monolog.logger.acl]
         tags:
             - { name: monolog.logger, channel: acl }
