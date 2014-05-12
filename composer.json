@@ -1,0 +1,23 @@
+{
+    "name": "codelovers/acl-bundle",
+    "description": "Symfony 2 Bundle that offers some convenience classes to handle ACLs in a Symfony 2 project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Holzmann",
+            "email": "d@velopment.at"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "symfony/framework-bundle": ">=2.1",
+        "symfony/monolog-bundle": ">=2.1",
+        "symfony/security": ">=2.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "CodeLovers\\AclBundle": ""
+        }
+    },
+    "target-dir": "CodeLovers/AclBundle"
+}
